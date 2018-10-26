@@ -1,0 +1,11 @@
+LIBRARY OpenDesktop
+EXPORTS
+ 
+ MouseProc
+ StartHook
+ StopHook
+ FindWindows
+ 
+ SECTIONS
+
+ Shared READ WRITE SHARED

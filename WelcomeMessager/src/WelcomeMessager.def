@@ -1,0 +1,5 @@
+LIBRARY WelcomeMessager.dll
+
+EXPORTS
+    DllCanUnloadNow                                 PRIVATE
+    DllGetClassObject                               PRIVATE

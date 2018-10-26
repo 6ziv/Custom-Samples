@@ -1,0 +1,22 @@
+all: SubAuthFunc ConfigFunc
+  
+.PHONY: SubAuthFunc
+SubAuthFunc:
+  cd SubAuth
+  -$(MAKE)
+  cd ..
+
+.PHONY: ConfigFunc
+ConfigFunc:
+  cd Config
+  -$(MAKE)
+  cd ..
+
+.PHONY: install
+install:
+  -mkdir bin
+  -copy SubAuth\SubAuth.dll bin
+  -copy Config\Config.exe bin
+  -copy Others\install.reg bin
+  -copy Others\uninstall.reg bin
+  -copy Others\install.bat .\

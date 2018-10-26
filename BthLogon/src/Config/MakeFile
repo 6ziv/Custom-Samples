@@ -1,0 +1,13 @@
+FileName=Config
+LIBS=Bthprops.lib advapi32.lib shell32.lib
+all: $(FileName).exe clean
+  
+$(FileName).obj:
+  $(CC) /c $(FileName).cpp
+
+$(FileName).exe: $(FileName).obj
+  Cl $(FileName).obj /link -out:$(FileName).exe $(LIBS)
+  
+.PHONY: clean
+clean:
+  -del $(FileName).obj

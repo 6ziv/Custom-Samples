@@ -1,0 +1,13 @@
+LIBRARY PassRec
+
+EXPORTS
+LsaApInitializePackage
+SpLsaModeInitialize
+LsaApLogonTerminated
+LsaApLogonUser
+SpInitialize
+SpLsaModeInitialize
+SpAcceptCredentials
+LsaApCallPackage
+LsaApCallPackagePassthrough
+LsaApCallPackageUntrusted

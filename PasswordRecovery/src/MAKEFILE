@@ -1,0 +1,17 @@
+all:Installation.exe PassRec.dll clean
+
+Installation.exe:Install.cpp Def.h
+  $(CC) Install.cpp /Fe:Installation.exe advapi32.lib
+	
+PassRec.dll:PassRec.obj PassRec.def
+  $(CC) PassRec.obj /link /out:PassRec.dll /def:PassRec.def
+  
+PassRec.obj:PassRec.cpp Def.h
+  $(CC) /c PassRec.cpp /Fo:PassRec.obj /EHsc
+  
+.PHONY: clean
+clean:
+    -del PassRec.obj
+	-del PassRec.lib
+	-del PassRec.exp
+	-del Install.obj
