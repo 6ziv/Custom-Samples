@@ -8,7 +8,7 @@ QT       += core gui
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
-TARGET = UAC
+TARGET = consent
 TEMPLATE = app
 
 # The following define makes your compiler emit warnings if you use
@@ -21,7 +21,11 @@ LIBS+=user32.lib advapi32.lib crypt32.lib Wintrust.lib shlwapi.lib Gdi32.lib
 # In order to do so, uncomment the following line.
 # You can also select to disable deprecated APIs only up to a certain version of Qt.
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
-QMAKE_LFLAGS+= /LARGEADDRESSAWARE /MACHINE:X64 /NOLOGO /RELEASE /INTEGRITYCHECK
+contains(QT_ARCH,i386){
+    QMAKE_LFLAGS+= /LARGEADDRESSAWARE /MACHINE:X86 /NOLOGO /RELEASE /INTEGRITYCHECK
+}else{
+    QMAKE_LFLAGS+= /LARGEADDRESSAWARE /MACHINE:X64 /NOLOGO /RELEASE /INTEGRITYCHECK
+}
 CONFIG += c++11
 
 SOURCES += \
