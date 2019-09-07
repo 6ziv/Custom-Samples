@@ -1,0 +1,46 @@
+{
+	"manifest_version": 2,
+	"name": "ImageOnTab",
+	"version": "0.1",
+	"options_ui":
+	{
+		"page": "popup.html",
+		"browser_style": true,
+		"open_in_tab":true
+	},
+	"content_scripts": 
+	[
+		{
+			"matches": ["<all_urls>"],
+			"js":[
+				"jquery-3.4.1.min.js",
+				"ShowImage.js"
+			],
+			"run_at":"document_start"
+		}
+	],
+	"icons": {
+		"16": "16.png",
+		"24": "24.png",
+		"32": "32.png",
+		"48": "48.png",
+		"64": "64.png",
+		"96": "96.png",
+		"128": "128.png",
+		"192": "192.png",
+		"256": "256.png"
+    },
+	"browser_action": {
+		 "default_icon": {
+            "16": "16.png",
+            "24": "24.png",
+            "32": "32.png",
+			"64": "64.png"
+          },
+		"default_title": "ImageOnTab",
+		"default_popup": "popup.html"
+	},
+	"permissions": [
+		"storage"
+	]	
+}
