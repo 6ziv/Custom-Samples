@@ -3,6 +3,7 @@ all: install_application install_plugins *.*
 install_application:build_application release *.*
 	COPY /Y src\application\build\release\QLive2D.exe release
 	COPY /Y 3rdparty\bin\bass.dll release
+	COPY /Y src\etc\settings.conf release
 	WINDEPLOYQT release
 
 install_plugins:build_plugins release *.*
