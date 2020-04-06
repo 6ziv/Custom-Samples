@@ -1,0 +1,5 @@
+LIBRARY LearnHelper
+EXPORTS
+    Initialize
+    Activated
+	DllMain

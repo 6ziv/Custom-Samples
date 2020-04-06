@@ -1,0 +1,9 @@
+<RCC>
+    <qresource prefix="/">
+        <file>icons/hide.png</file>
+        <file>icons/music.png</file>
+        <file>icons/power.png</file>
+        <file>icons/setting.png</file>
+        <file>icons/nomusic.png</file>
+    </qresource>
+</RCC>

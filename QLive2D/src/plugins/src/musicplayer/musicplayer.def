@@ -1,0 +1,3 @@
+LIBRARY MusicPlayer
+EXPORTS
+    Initialize
