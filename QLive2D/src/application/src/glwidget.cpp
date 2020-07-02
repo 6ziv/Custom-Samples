@@ -75,7 +75,7 @@ GLWidget::GLWidget(int w,int h):
     });
 }
 void GLWidget::initializeGL(){
-    OpenGLHelper::get()->initializeOpenGLFunctions();
+    //OpenGLHelper::get()->initializeOpenGLFunctions();
 }
 void GLWidget::resizeGL(int width, int height){
 }
@@ -100,10 +100,14 @@ void GLWidget::mousePressEvent(QMouseEvent*e){
         auto pos=App::GetInstance()->GetModel()->getpos();
         int cx=(pos.first+1.0)*this->width()/2;
         int cy=(1.0-pos.second)*this->height()/2;
-        if(cx>100)
-            menu.moveto(QPoint(cx-100,cy-300));
-        else
+        if(cx>100){
+            menu.moveto(QPoint(cx-150,cy-300));
+            //move a little further to avoid being blocked by the model
+        }
+        else{
             menu.moveto(QPoint(cx+100,cy-300));
+            //move to right if left is unavilable
+        }
         if(!menu.IsShown())
             menu.AnimatedShow();
         return;
